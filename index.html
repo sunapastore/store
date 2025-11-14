@@ -6,17 +6,18 @@
   <meta name="description" content="सूर्योदय नगरपालिका - जिन्सी सामानहरुको विवरण | सम्पत्ति व्यवस्थापन इकाई"/>
   <title>जिन्सी विवरण | सूर्योदय नगरपालिका</title>
 
-  <!-- Google Fonts: Noto Sans Devanagari -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
   <style>
     :root {
       --primary: #0a597d;
       --primary-dark: #084b68;
-      --text: #2d2d2d;
-      --bg: #f8f9fa;
+      --text: #000000;
       --white: #ffffff;
-      --border-radius: 10px;
+      --hover: #0a597d;
+      --accent: #0a597d;
       --transition: all 0.3s ease;
     }
 
@@ -28,20 +29,20 @@
 
     body {
       font-family: "Noto Sans Devanagari", "Preeti", sans-serif;
-      background: var(--bg);
+      background: var(--white);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
       text-align: center;
     }
 
     /* ---------- NAVBAR ---------- */
     .navbar {
       background: var(--primary);
-      padding: 14px 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 16px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
 
     .nav-container {
@@ -50,7 +51,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 18px;
       padding: 0 15px;
     }
 
@@ -59,27 +60,61 @@
       text-decoration: none;
       font-size: 17px;
       font-weight: 500;
-      padding: 8px 16px;
-      border-radius: 6px;
+      padding: 10px 18px;
+      border-radius: 8px;
       transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .navbar a:hover {
-      background: rgba(255,255,255,0.2);
-      text-decoration: underline;
+      background: rgba(255,255,255,0.25);
     }
 
-    /* ---------- TITLE SECTION ---------- */
-    .title-section {
-      margin: 50px auto;
+    .navbar a i {
+      font-size: 15px;
+    }
+
+    /* ---------- LOGO & TITLE ---------- */
+    .header-section {
+      margin: 40px auto 20px;
       max-width: 900px;
       padding: 0 20px;
     }
 
+    .logo {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 20px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(10,89,125,0.2);
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .title-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
     .title-section h3 {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       color: var(--primary);
-      margin: 8px 0;
+      margin: 10px 0;
     }
 
     .title-section h3 b {
@@ -87,62 +122,102 @@
     }
 
     .title-section h2 {
-      font-size: 2rem;
-      margin: 20px 0 15px;
+      font-size: 2.1rem;
+      margin: 22px 0 16px;
       color: var(--primary);
+      font-weight: 700;
     }
 
     .title-section p {
       font-size: 1rem;
       color: #555;
-      margin-top: 15px;
+      margin-top: 18px;
       font-style: italic;
+      background: #f0f8ff;
+      padding: 12px;
+      border-radius: 8px;
+      display: inline-block;
+      max-width: 800px;
     }
 
-    /* ---------- BUTTON GRID ---------- */
+    /* ---------- BUTTON GRID (NEW STYLE) ---------- */
     .buttons {
       max-width: 1100px;
-      margin: 40px auto;
+      margin: 50px auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
       padding: 0 20px;
     }
 
-    .btn-box {
-      background: var(--primary);
-      color: var(--white);
-      padding: 20px 15px;
-      border-radius: var(--border-radius);
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 500;
-      box-shadow: 0 4px 12px rgba(10, 89, 125, 0.2);
+    .item {
+      background: #f9f9f9;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       transition: var(--transition);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 70px;
     }
 
-    .btn-box:hover {
-      background: var(--primary-dark);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(10, 89, 125, 0.3);
+    .item:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .item a {
+      display: block;
+      padding: 24px 28px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: var(--transition);
+      text-align: left;
+      position: relative;
+    }
+
+    .item a:hover {
+      background: var(--hover);
+      color: var(--white);
+    }
+
+    .sno {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      width: 42px;
+      height: 42px;
+      line-height: 42px;
+      text-align: center;
+      border-radius: 50%;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-right: 16px;
+      float: left;
+    }
+
+    .btn-text {
+      display: block;
+      margin-left: 58px;
+      padding-top: 6px;
+      font-size: 18px;
+    }
+
+    .item a:hover .sno {
+      background: var(--white);
+      color: var(--primary);
     }
 
     /* ---------- FOOTER ---------- */
     footer {
-      margin-top: 80px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      margin-top: 90px;
+      background: var(--primary);
       color: var(--white);
-      padding: 40px 20px;
+      padding: 45px 20px;
       font-size: 15px;
     }
 
     .footer-content {
       max-width: 900px;
       margin: 0 auto;
+      text-align: center;
     }
 
     .footer-content p {
@@ -150,9 +225,9 @@
     }
 
     .contact-info {
-      margin-top: 15px;
+      margin-top: 18px;
       font-size: 14px;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     .contact-info a {
@@ -162,50 +237,70 @@
 
     .contact-info a:hover {
       text-decoration: underline;
+      color: #ffffff;
     }
 
-    /* Responsive Adjustments */
+    /* Responsive */
     @media (max-width: 768px) {
       .navbar a {
         font-size: 15px;
-        padding: 6px 12px;
+        padding: 8px 14px;
       }
       .title-section h2 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
       .buttons {
         grid-template-columns: 1fr;
-        gap: 18px;
+      }
+      .item a {
+        padding: 20px 22px;
+      }
+      .sno {
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+        font-size: 1rem;
+      }
+      .btn-text {
+        margin-left: 52px;
+        font-size: 17px;
       }
     }
 
-    @media (max-width: 480px) {
-      .title-section {
-        margin: 30px auto;
+    @media (max-width: 576px) {
+      .logo {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
       }
       .title-section h3 {
         font-size: 1.2rem;
       }
-      .btn-box {
-        font-size: 16px;
-        padding: 16px 10px;
+      .title-section h2 {
+        font-size: 1.6rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- MENU BAR -->
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#">गृह पृष्ठ</a>
-      <a href="#">जिन्सी विवरण</a>
-      <a href="#">सम्पत्ति व्यवस्थापन</a>
-      <a href="#">सम्पर्क</a>
+      <a href="#"><i class="fas fa-home"></i> गृह पृष्ठ</a>
+      <a href="#"><i class="fas fa-box"></i> जिन्सी विवरण</a>
+      <a href="#"><i class="fas fa-cogs"></i> सम्पत्ति व्यवस्थापन</a>
+      <a href="#"><i class="fas fa-phone"></i> सम्पर्क</a>
     </div>
   </nav>
 
-  <!-- TITLE SECTION -->
+  <!-- LOGO & TITLE -->
+  <header class="header-section">
+    <div class="logo">
+      <img src="https://via.placeholder.com/90?text=Logo" alt="सूर्योदय नगरपालिका लोगो">
+    </div>
+  </header>
+
   <div class="title-section">
     <h3>सूर्योदय नगरपालिका</h3>
     <h3><b>नगर कार्यपालिकाको कार्यालय</b></h3>
@@ -214,14 +309,44 @@
     <p>(आफ्नो शाखाको Email बाट Google Chrome मा लगइन गरे मात्र सम्बन्धित विवरण हेर्न सकिन्छ।)</p>
   </div>
 
-  <!-- BUTTON GRID -->
+  <!-- BUTTON GRID (NEW STYLE) -->
   <div class="buttons">
-    <a class="btn-box" href="LINK1" target="_blank">मौज्दात सामानहरु</a>
-    <a class="btn-box" href="LINK2" target="_blank">विपत सम्बन्धी सामानहरु</a>
-    <a class="btn-box" href="LINK3" target="_blank">सबै सामानको विवरण</a>
-    <a class="btn-box" href="LINK4" target="_blank">उपभोग्य सम्बन्धी विवरण</a>
-    <a class="btn-box" href="LINK5" target="_blank">माग फाराम</a>
-    <a class="btn-box" href="LINK6" target="_blank">शाखा अनुसारको जिन्सी विवरण</a>
+    <div class="item">
+      <a href="LINK1" target="_blank">
+        <span class="sno">1</span>
+        <span class="btn-text">मौज्दात सामानहरु</span>
+      </a>
+    </div>
+    <div class="item">
+      <a href="LINK2" target="_blank">
+        <span class="sno">2</span>
+        <span class="btn-text">विपत सम्बन्धी सामानहरु</span>
+      </a>
+    </div>
+    <div class="item">
+      <a href="LINK3" target="_blank">
+        <span class="sno">3</span>
+        <span class="btn-text">सबै सामानको विवरण</span>
+      </a>
+    </div>
+    <div class="item">
+      <a href="LINK4" target="_blank">
+        <span class="sno">4</span>
+        <span class="btn-text">उपभोग्य सम्बन्धी विवरण</span>
+      </a>
+    </div>
+    <div class="item">
+      <a href="LINK5" target="_blank">
+        <span class="sno">5</span>
+        <span class="btn-text">माग फाराम</span>
+      </a>
+    </div>
+    <div class="item">
+      <a href="LINK6" target="_blank">
+        <span class="sno">6</span>
+        <span class="btn-text">शाखा अनुसारको जिन्सी विवरण</span>
+      </a>
+    </div>
   </div>
 
   <!-- FOOTER -->
